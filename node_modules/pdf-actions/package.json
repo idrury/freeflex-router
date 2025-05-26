@@ -1,0 +1,66 @@
+{
+  "name": "pdf-actions",
+  "version": "1.2.2",
+  "description": "A NPM Package built on top of pdf-lib that provides functonalities like merge, rotate, split and many more...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ManasMadan/pdf-actions"
+  },
+  "keywords": [
+    "pdf",
+    "pdf-actions",
+    "pdf-react",
+    "pdf-document",
+    "pdf-file",
+    "Merge",
+    "pdf-merge",
+    "pdf merge",
+    "Rotate",
+    "pdf-rotate",
+    "pdf rotate",
+    "Split",
+    "pdf split",
+    "File to PDF",
+    "Input PDF",
+    "PDF Unit8Array",
+    "PDF Blob",
+    "PDF Array to Blob",
+    "PDF Array",
+    "Break PDF",
+    "pdf-break",
+    "pdf break",
+    "flatten pdf",
+    "flatten pdf forms",
+    "flatten-pdf-forms",
+    "resize",
+    "resize pdf",
+    "margin pdf",
+    "pdf-margin",
+    "Margin to PDF",
+    "PDF Metadata",
+    "Metadata",
+    "PDF Page Numbers",
+    "Image to PDF",
+    "PDF From Image",
+    "JPG To PDF",
+    "PDF FROM JPG",
+    "JPEG To PDF",
+    "PDF FROM JPEG",
+    "Easy PDF",
+    "PDF Online",
+    "PDF Free"
+  ],
+  "author": "Manas Madan",
+  "license": "MIT",
+  "dependencies": {
+    "pdf-lib": "^1.17.0"
+  },
+  "homepage": "https://github.com/ManasMadan/pdf-actions",
+  "bugs": {
+    "url": "https://github.com/ManasMadan/pdf-actions/issues"
+  }
+}
