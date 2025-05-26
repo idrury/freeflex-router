@@ -1,7 +1,6 @@
 import React from "react";
 import { FFProject } from "../assets/Types";
 import { DateTime, Duration } from "luxon";
-import { redirect } from "react-router";
 
 /**********************************
  * Change to a different page
@@ -10,7 +9,7 @@ import { redirect } from "react-router";
 export function reRouteTo(url: string | undefined) {
   if (!url) return;
 
- return redirect(url);
+  window.location.href = url;
 }
 
 /** *************************************

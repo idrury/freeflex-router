@@ -4,7 +4,6 @@ import ErrorPopup from "./Elements/ErrorPopup";
 import BasicMenu from "./Elements/BasicMenu";
 import Landing from "./Pages/Landing";
 import { reRouteTo } from "./Functions/commonFunctions";
-import stopwatch from "react-timer-hook";
 import { FREELANCEJOBS, QUOTES } from "./Functions/Data";
 import IonIcon from "@reacticons/ionicons";
 import { signInWithGoogle } from "./Functions/DBAccess";
@@ -31,23 +30,21 @@ export default function Authorization({}) {
   const [currentQuote, setCurrentQuote] = useState(QUOTES[0]);
   const [width, setWidth] = useState(window.innerWidth);
 
-  const totalSeconds = 1;
-  // const {
-  //   totalSeconds,
-  //   seconds,
-  //   minutes,
-  //   hours,
-  //   days,
-  //   isRunning,
-  //   start,
-  //   pause,
-  //   reset,
-  // } = useStopwatch({ autoStart: true });
-
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Control the timer
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentJobPosition((prevCount) => {
+        return changeJob(prevCount);
+      });
+    }, 2000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   function getParamater(param) {
@@ -73,14 +70,13 @@ export default function Authorization({}) {
     setLoading(false);
   };
 
-  function showError(text) {
+  function showError(text: string) {
     setErrorPopupActive(true);
     setErrorPopupText(text);
   }
 
-  // Update screen text
-  if (totalSeconds > 1) {
-    let currentPosition = currentJobPosition + 1;
+  function changeJob(position: number) {
+    let currentPosition = position + 1;
     let quoteSecondCount = quoteCounter + 1;
 
     // Handle job title changing
@@ -88,7 +84,6 @@ export default function Authorization({}) {
       currentPosition = 0;
     }
     setJobType(FREELANCEJOBS[currentPosition]);
-    setCurrentJobPosition(currentPosition);
 
     // Handle businesses changing
     if (quoteSecondCount > 3) {
@@ -104,9 +99,8 @@ export default function Authorization({}) {
       setquoteCounter(quoteSecondCount);
     }
 
-    reset();
+    return currentPosition;
   }
-
   async function handleGoogleSignIn() {
     try {
       await signInWithGoogle();
@@ -130,15 +124,21 @@ export default function Authorization({}) {
             width={400}
           >
             <div className="col middle center m2">
-              <IonIcon name="paper-plane" style={{width: 100, height: 100}}/>
+              <IonIcon
+                name="paper-plane"
+                style={{ width: 100, height: 100 }}
+              />
               <h2>EMAIL SENT!</h2>
               <p style={{ textAlign: "center" }}>
                 Check your inbox for the login link!
               </p>
-                <button className="accentButton w100 centerRow">
-                  <IonIcon  name="arrow-back" className="basicIcon mr1"/> 
-                  <p className="m0">Back</p>
-                </button>
+              <button className="accentButton w100 centerRow">
+                <IonIcon
+                  name="arrow-back"
+                  className="basicIcon mr1"
+                />
+                <p className="m0">Back</p>
+              </button>
               <br />
             </div>
           </BasicMenu>
@@ -215,15 +215,18 @@ export default function Authorization({}) {
                     disabled={loading}
                   >
                     {loading ? (
-                      <spinners.BeatLoader color="#111111" size={10} />
+                      <spinners.BeatLoader
+                        color="#111111"
+                        size={10}
+                      />
                     ) : (
                       <span className="centerRow middle">
-                         <IonIcon
-                        name="mail-open-sharp"
-                        className="basicIcon mr2"
-                      />
+                        <IonIcon
+                          name="mail-open-sharp"
+                          className="basicIcon mr2"
+                        />
                         Email link
-                        </span>
+                      </span>
                     )}
                   </button>
                 </div>
@@ -286,8 +289,7 @@ export default function Authorization({}) {
         </div>
       </div>
     );
-  }
-  else {
+  } else {
     return (
       <div>
         <AuthHeaderBar width={width} />
