@@ -1,0 +1,71 @@
+.ff-markdown h2 {
+  color: #121212;
+  background-color: var(--primaryColor);
+  padding: 20px !important;
+  margin: 40px 0 20px 0 !important;
+  text-align: start;
+  border-radius: 3px;
+  margin: 0;
+  padding: 0;
+}
+
+.ff-markdown a {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ff-markdown {
+   margin-top: -20px;
+}
+
+.ff-markdown h3 {
+  color: var(--primaryColor);
+  padding-top: 10px 0 !important;
+  text-align: start;
+  margin: 0;
+  padding: 0;
+}
+
+.ff-markdown p,
+.ff-markdown td {
+  font-family: "Inter", sans-serif;
+  font-size: 10pt;
+  line-height: 2;
+}
+table {
+  padding-top: 10px;
+}
+
+thead th {
+  border-top: 1px solid var(--smallAccent);
+  border-radius: 0px;
+}
+
+thead th:first-child {
+  border-left: 1px solid var(--smallAccent);
+}
+
+tbody th {
+  border-left: 1px solid var(--smallAccent);
+}
+th {
+  background-color: var(--lightBackground);
+  font-size: 10pt;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  padding: 10px 10px;
+
+  text-align: start;
+  box-shadow: 1px 0px 0px 0px var(--smallAccent) !important;
+}
+
+tr {
+  border-bottom: 1px solid white !important;
+  box-shadow: 1px 1px 0px 0px var(--smallAccent);
+}
+
+td {
+  padding: 5px 0 5px 5px;
+  line-height: 1.8 !important;
+  box-shadow: 1px 0px 0px 0px var(--smallAccent) !important;
+}

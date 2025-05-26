@@ -1,0 +1,178 @@
+.CSVImporter_Importer input[type="checkbox"] {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.CSVImporter_Importer label {
+  font-size: 10pt;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.CSVImporter_FileStep__header,
+.CSVImporter_ImporterFrame__headerTitle {
+    margin-left: 30px;
+  fill: var(--text);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.CSVImporter_ImporterFrame {
+  background-color: var(--background);
+  border: none;
+}
+
+pre {
+  font-size: 10pt !important;
+  background-color: var(--lightBackground);
+  border-radius: 3px;
+}
+
+/*********** table **************/
+.CSVImporter_FormatDataRowPreview {
+  border: 1px solid var(--smallAccent);
+  border-radius: 3px !important;
+}
+.CSVImporter_Importer thead th {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: bold !important;
+  color: var(--text) !important;
+  font-size: 0.9em;
+  border: none !important;
+
+  padding: 0 10px 10px 0;
+}
+.CSVImporter_Importer td {
+  border: none !important;
+  font-family: "inter";
+  color: var(--text) !important;
+  font-size: 0.9em;
+  border-radius: 3px;
+
+  padding: 0 10px 10px 0;
+}
+
+.CSVImporter_Importer button {
+  font-size: 10pt;
+  background-color: var(--primaryColor);
+  font-family: "Poppins", sans-serif;
+}
+
+/**************** cards ***************/
+
+.CSVImporter_ColumnDragCard {
+  border-radius: 3px !important;
+  border: 1px solid var(--smallAccent);
+}
+
+.CSVImporter_ColumnDragSourceArea__box 
+.CSVImporter_ColumnDragCard {
+  background-color: var(--background) !important;
+}
+
+.CSVImporter_ColumnDragSourceArea__box 
+.CSVImporter_ColumnDragCard 
+.CSVImporter_ColumnDragCard__cardValue{
+  color: var(--smallAccent) !important;
+}
+
+.CSVImporter_ColumnDragSourceArea__box
+  .CSVImporter_ColumnDragCard[data-shadow="false"] {
+  background-color: var(--primaryColor) !important;
+}
+
+.CSVImporter_ColumnDragTargetArea__boxValue
+  .CSVImporter_ColumnDragCard[data-dummy="true"] {
+  opacity: 100%;
+  background-color: var(--background);
+}
+
+.CSVImporter_ColumnDragTargetArea__boxValue
+  .CSVImporter_ColumnDragCard[data-dummy="false"] {
+  border-radius: 3px;
+  background: var(--primaryColor);
+}
+
+.CSVImporter_ColumnDragCard[data-dummy="false"]
+  .CSVImporter_ColumnDragCard__cardValue {
+  color: #121212;
+}
+
+.CSVImporter_ColumnDragCard__cardValue {
+  text-align: start !important;
+  font-weight: bold;
+  color: var(--text);
+}
+
+div[role="text"] .CSVImporter_ColumnDragCard__cardValue {
+    font-weight: normal !important;
+  }
+
+.CSVImporter_ColumnDragCard__cardHeader {
+  background: none !important;
+}
+
+b {
+  color: var(--text);
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600;
+  background: var(--background) !important;
+  border-radius: 3px !important;
+}
+
+.CSVImporter_ColumnDragTargetArea__boxLabel, 
+.CSVImporter_ImporterFrame__headerSubtitle {
+    color: var(--text) !important;
+    font-weight: 500 !important;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 10pt !important;
+}
+
+.CSVImporter_ColumnDragTargetArea__boxPlaceholderHelp {
+    font-family: "inter" !important;
+    font-size: 10pt !important;
+}
+
+.CSVImporter_ColumnDragSourceArea {
+    margin: 50px 0 10px
+}
+.CSVImporter_ColumnDragTargetArea {
+    margin: 10px 45px;
+}
+
+.CSVImporter_ColumnDragSourceArea__pageIndicator {
+    background-color: var(--lightBackground);
+    margin: -30px 5px 0 5px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+
+/*********** drag drop *************/
+.CSVImporter_FileSelector {
+  font-family: "inter" !important;
+  font-weight: 400;
+  font-size: 11pt;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--lightBackground);
+  color: var(--text);
+  border: 1px solid var(--smallAccent);
+  border-radius: 3px;
+
+  transition: .3s;
+}
+
+
+/*********** drag drop *************/
+.CSVImporter_FileSelector[data-active=true] {
+ background-color: var(--smallAccent);
+ box-shadow: 0 0 0px 5px var(--primaryColor);
+  
+transition: .3s;
+}
+.CSVImporter_FileSelector:hover {
+  background-color: var(--smallAccent);
+}
