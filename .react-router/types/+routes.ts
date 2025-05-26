@@ -13,10 +13,13 @@ type Pages = {
   "/": {
     params: {};
   };
-  "/nothome": {
+  "/help": {
     params: {};
   };
-  "/app": {
+  "/help/privacy-policy": {
+    params: {};
+  };
+  "/home": {
     params: {};
   };
 };
@@ -24,18 +27,30 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/nothome" | "/app";
+    page: "/" | "/help" | "/help/privacy-policy" | "/home";
   };
   "routes/home.tsx": {
     id: "routes/home";
     page: "/";
   };
-  "routes/nothome.tsx": {
-    id: "routes/nothome";
-    page: "/nothome";
+  "routes/help.tsx": {
+    id: "routes/help";
+    page: "/help" | "/help/privacy-policy";
+  };
+  "routes/help-home.tsx": {
+    id: "routes/help-home";
+    page: "/help";
+  };
+  "routes/privacy-policy.tsx": {
+    id: "routes/privacy-policy";
+    page: "/help/privacy-policy";
   };
   "routes/App.tsx": {
     id: "routes/App";
-    page: "/app";
+    page: "/home";
+  };
+  "routes/Landing.tsx": {
+    id: "routes/Landing";
+    page: "/home";
   };
 };

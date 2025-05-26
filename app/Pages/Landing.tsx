@@ -3,9 +3,9 @@ import { reRouteTo } from "../Functions/commonFunctions";
 import { LIMITS } from "../assets/data";
 
 export default function Landing({ currentJob, width }) {
-
   return (
     <div style={{ margin: 0 }}>
+
       <div
         style={{
           margin: `${

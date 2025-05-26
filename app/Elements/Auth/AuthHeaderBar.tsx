@@ -1,15 +1,19 @@
+import { useEffect } from "react";
 import { reRouteTo } from "../../Functions/commonFunctions";
-import IonIcon from "@reacticons/ionicons";
+import {IoMdHome, IoMdLogIn, IoMdPersonAdd} from "react-icons/io"
 
 interface AuthHeaderBarProps {
   width: number;
   authorized?: boolean;
 }
 
-export default function AuthHeaderBar({
+export default function AuthorizationHeaderBar({
   width,
   authorized,
 }: AuthHeaderBarProps) {
+
+  useEffect(() => {}, [])
+
   return (
     <div
       className="row middle"
@@ -42,10 +46,9 @@ export default function AuthHeaderBar({
             onClick={() => reRouteTo(`/`)}
             className="thirty middle centerRow"
           >
-            <IonIcon
-              name="home"
-              className="basicIcon smallIcon mr2"
-            />
+              <IoMdHome
+                className="basicIcon smallIcon mr2"
+              />
             Home
           </button>
         </div>
@@ -55,17 +58,17 @@ export default function AuthHeaderBar({
             onClick={() => reRouteTo("/login?status=login")}
             className="thirty middle centerRow"
           >
-            <IonIcon
-              name="log-in-outline"
-              className="basicIcon mr2"
-            />
+              <IoMdLogIn
+                name="log-in-outline"
+                className="basicIcon mr2"
+              />
             Login
           </button>
           <button
             onClick={() => reRouteTo("/login?status=register")}
             className="accentButton thirty centerRow middle"
           >
-            <IonIcon
+            <IoMdPersonAdd
               name="person-add-sharp"
               className="basicIcon mr2"
             />

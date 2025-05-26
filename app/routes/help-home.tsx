@@ -1,6 +1,7 @@
-import App from "~/Pages/App";
+import HelpPage from "~/Elements/Help/HelpPage";
 import { Route } from "../+types/root";
-
+import Landing from "~/Pages/Landing";
+import HelpLanding from "~/Elements/Help/HelpLanding";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,6 +10,6 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function LoadApp() {
-  return <App />;
+export default function LoadHelpHome() {
+  return <HelpPage />;
 }

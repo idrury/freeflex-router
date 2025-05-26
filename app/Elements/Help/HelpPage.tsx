@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ALWAYS_ACCESSIBLE_PAGES } from "./MdData";
-import IonIcon from "@reacticons/ionicons";
+import { IoMdDocument, IoMdHelpCircle } from "react-icons/io";
 
 export default function HelpPage() {
   const [filterText, setFilterText] = useState<string>();
@@ -9,7 +9,7 @@ export default function HelpPage() {
     <div className="w100">
       <div className="boxedAccent m0">
         <div className="m2 center middle">
-          <IonIcon
+          <IoMdHelpCircle
             name="help-circle"
             className="basicIcon"
             style={{ height: 50, width: 50 }}
@@ -55,7 +55,7 @@ export default function HelpPage() {
                 window.open(`/help/${page.url}`, "_blank")
               }
             >
-              <IonIcon
+              <IoMdDocument
                 name="document-text-sharp"
                 className="basicIcon mr2"
                 style={{ width: 60, height: 60 }}
@@ -91,7 +91,7 @@ export default function HelpPage() {
                   window.open(`/help/${page.url}`, "_blank")
                 }
               >
-                <IonIcon
+                <IoMdDocument
                   name="document-text-sharp"
                   className="basicIcon mr2"
                   style={{ width: 60, height: 60 }}
@@ -126,7 +126,7 @@ export default function HelpPage() {
                   window.open(`/help/${page.url}`, "_blank")
                 }
               >
-                <IonIcon
+                <IoMdDocument
                   name="document-text-sharp"
                   className="basicIcon mr2"
                   style={{ width: 60, height: 60 }}

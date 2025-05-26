@@ -12,6 +12,6 @@ export function loader({ context }: Route.LoaderArgs) {
   return { message: "Hello from Vercel aaa" };
 }
 
-export default function Home({ loaderData }: Route.ComponentProps) {
+export default function LoadWelcome({ loaderData }: Route.ComponentProps) {
   return <Welcome message={loaderData.message} />;
 }

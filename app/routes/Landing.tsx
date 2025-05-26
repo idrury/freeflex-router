@@ -1,6 +1,5 @@
-import App from "~/Pages/App";
 import { Route } from "../+types/root";
-
+import Landing from "~/Pages/Landing";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,6 +8,6 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function LoadApp() {
-  return <App />;
+export default function LoadLanding() {
+  return <Landing width={100} currentJob={"Freelancer"} />;
 }

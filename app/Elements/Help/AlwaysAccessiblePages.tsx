@@ -3,7 +3,7 @@ import MarkdownPage from "./MarkdownPage";
 import { ALWAYS_ACCESSIBLE_PAGES } from "./MdData";
 import { getUrlPage } from "./HelpBL";
 import { FFPage } from "../../assets/Types";
-import HelpPage from "./Help";
+import HelpPage from "./HelpPage";
 import Footer from "../Footer";
 import AuthHeaderBar from "../Auth/AuthHeaderBar";
 

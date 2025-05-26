@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../../supabaseClient";
 import Authorization from "../Authorization";
-import {
-  fetchUserProfile,
-  insertError
-} from "../Functions/DBAccess";
+import { fetchUserProfile, insertError } from "../Functions/DBAccess";
 import { Analytics } from "@vercel/analytics/react";
 import OnBoard from "../Elements/OnBoarding/OnBoard";
 import NewFeatureModal from "../Elements/NewFeatures/NewFeatureModal";
@@ -29,11 +26,14 @@ import AlwaysAccessiblePages from "../Elements/Help/AlwaysAccessiblePages";
 import FixedRow from "../Elements/FixedRow";
 import IonIcon from "@reacticons/ionicons";
 import { reRouteTo } from "../Functions/commonFunctions";
-
+import { Outlet } from "react-router";
+import AuthHeaderBar from "~/Elements/Auth/AuthHeaderBar";
+import AuthorizationHeaderBar from "~/Elements/Auth/AuthHeaderBar";
 
 function App() {
   const shrinkSize = 1200;
-  const [session, setSession] = useState<supabaseTypes.Session | null>(null);
+  const [session, setSession] =
+    useState<supabaseTypes.Session | null>(null);
   const [loading, setLoading] = useState(true);
   const [profile, setProfile] = useState<FFProfile>();
   const [width, setWidth] = useState(0);
@@ -162,90 +162,14 @@ function App() {
       state: isError ? "fail" : "success",
     });
   };
+
   return (
     <div
       data-theme={lightModeOn ? "light" : "dark"}
       style={{ minHeight: "100vh" }}
     >
-      {loading ? (
-        <div
-          className="centerRow slowFade"
-          style={{ height: "100vh" }}
-        >
-          <img
-            src="https://img.playbook.com/IR8ld9DMC6GajY155YEiPfyNabJU8k7bKFiOsk_t7sQ/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzU3NjdiOGQ0/LTgzMTQtNDliMC1h/OGYwLTNkMGI2YTVl/MTE3Zg"
-            width={200}
-          />
-        </div>
-      ) : (
-        <div className="slowFade">
-          {!session ? (
-            <Authorization />
-          ) : onBoard == true ? (
-            <OnBoard
-              uid={session?.user?.id}
-              setOnBoard={setOnBoard}
-            />
-          ) : (
-            <div>
-              <SavedModal
-                visible={savedModal.visible}
-                header={savedModal.header}
-                body={savedModal.body}
-                state={savedModal.state}
-                setVisible={() =>
-                  setSavedModal({
-                    visible: false,
-                    header: undefined,
-                    body: undefined,
-                  })
-                }
-              />
-              {profile && (
-                <div>
-                  {!profile.default_settings
-                    .business_details_exist && (
-                    <FixedRow accent menuVisible={menuVisible}>
-                      <div className="centerRow middle hundred" style={{marginLeft: `${menuVisible ? 300: 0}px`}}>
-                        <h3>
-                          You haven't added your business details yet!
-                        </h3>
-                        <button
-                          onClick={() => reRouteTo("/account")}
-                          className="centerRow middle accentButton"
-                        >
-                          <IonIcon
-                            name="link-sharp"
-                            className="basicIcon smallIcon mr2"
-                          />
-                          Add my details
-                        </button>
-                      </div>
-                    </FixedRow>
-                  )}
-                  <NewFeatureModal
-                    featuresRead={profile?.new_features_read}
-                    onClose={() => onNewFeaturesRead()}
-                  />
-                  {/* <Index
-                    popSavedModal={popSavedModal}
-                    session={session}
-                    profile={profile}
-                    menuVisible={menuVisible}
-                    setMenuVisible={changeMenuVisibility}
-                    inShrinkState={inShrinkState}
-                    lightModeOn={lightModeOn}
-                    setLightModeOn={changeColorMode}
-                    setPrimaryColor={setAccentColor}
-                  /> */}
-                </div>
-              )}
-            </div>
-          )}
-          <Analytics />
-          <Footer menuVisible={session ? menuVisible : false} />
-        </div>
-      )}
+      <AuthorizationHeaderBar width={width} authorized={false} />
+      <Outlet />
     </div>
   );
 }

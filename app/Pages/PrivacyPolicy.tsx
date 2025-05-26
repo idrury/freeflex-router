@@ -1,6 +1,5 @@
-import IonIcon from "@reacticons/ionicons";
-import React from "react";
 import { reRouteTo } from "../Functions/commonFunctions";
+import { IoMdArrowBack, IoMdDocument } from "react-icons/io";
 
 export default function PrivacyPolicy({
   menuVisible,
@@ -23,14 +22,14 @@ export default function PrivacyPolicy({
           className="leftRow middle p0 pl2 pr2"
           onClick={() => reRouteTo("/")}
         >
-          <IonIcon name="arrow-back" /> <p>Back</p>
+          <IoMdArrowBack /> <p>Back</p>
         </button>
         <br />
         <div className="boxed">
           <h3 className="m2">Privacy Policy for FreeFlex</h3>
           <br />
           <div className="leftRow middle m2">
-            <IonIcon
+            <IoMdDocument
               name="document-sharp"
               style={{ width: "2em", height: "100%" }}
             />
