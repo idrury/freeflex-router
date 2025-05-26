@@ -1,4 +1,3 @@
-import App from "~/Pages/App";
 import { Route } from "../+types/root";
 import PrivacyPolicy from "~/Pages/PrivacyPolicy";
 

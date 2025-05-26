@@ -170,6 +170,7 @@ function App() {
     >
       <AuthorizationHeaderBar width={width} authorized={false} />
       <Outlet />
+      <Footer/>
     </div>
   );
 }

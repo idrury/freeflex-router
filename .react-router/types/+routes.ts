@@ -19,18 +19,19 @@ type Pages = {
   "/help/privacy-policy": {
     params: {};
   };
-  "/home": {
-    params: {};
-  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/help" | "/help/privacy-policy" | "/home";
+    page: "/" | "/help" | "/help/privacy-policy";
   };
   "routes/home.tsx": {
     id: "routes/home";
+    page: "/";
+  };
+  "routes/Landing.tsx": {
+    id: "routes/Landing";
     page: "/";
   };
   "routes/help.tsx": {
@@ -44,13 +45,5 @@ type RouteFiles = {
   "routes/privacy-policy.tsx": {
     id: "routes/privacy-policy";
     page: "/help/privacy-policy";
-  };
-  "routes/App.tsx": {
-    id: "routes/App";
-    page: "/home";
-  };
-  "routes/Landing.tsx": {
-    id: "routes/Landing";
-    page: "/home";
   };
 };
